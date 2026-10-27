@@ -1,7 +1,9 @@
 # firmware-samsung-p3s
 
 Proprietary firmware for the **Samsung Galaxy S21 Ultra 5G (Exynos, SM-G998B, codename `p3s`)**,
-used by the postmarketOS port (`device-samsung-p3s` / `firmware-samsung-p3s` in pmaports).
+used by the unofficial postmarketOS / Nura port at
+[andersabra/samsung-p3s-postmarket-port](https://github.com/andersabra/samsung-p3s-postmarket-port)
+(package `firmware-samsung-p3s`).
 
 These files are copied unmodified from the stock **vendor** logical partition (inside `super`)
 of an SM-G998B running One UI with the December 2024 security patch. They are Samsung/Broadcom
@@ -24,5 +26,6 @@ postmarketOS package installs them flat into `/lib/firmware`.
 
 ## Extracting them yourself
 
-On a phone running the postmarketOS port, `p3s-wifi-probe.sh` / `p3s-lp-find.sh` from the port
-work folder map `vendor` out of `super` read-only with device-mapper and copy `firmware/wifi/`.
+The files are in `firmware/` and `firmware/wifi/` of the `vendor` logical partition inside
+`super`; mount `vendor` read-only (e.g. with device-mapper, using the extents from the LP
+metadata) and copy them.
